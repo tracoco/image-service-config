@@ -50,7 +50,7 @@ export default class FirebaseService extends ImageService {
           this.firebase.storage.TaskEvent.STATE_CHANGED,
           function(snapshot) {
             const percent =
-              snapshot.bytesTransferred / snapshot.totalBytes * 100;
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             onProgress({ percent });
           },
           function(e) {

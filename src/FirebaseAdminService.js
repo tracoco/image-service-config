@@ -66,7 +66,7 @@ export default class FirebaseAdminService extends ImageService {
                 onUploadProgress: e => {
                   const done = e.position || e.loaded;
                   const total = e.totalSize || e.total;
-                  const percent = done / total * 100;
+                  const percent = (done / total) * 100;
                   onProgress({ percent });
                 },
                 headers: {
